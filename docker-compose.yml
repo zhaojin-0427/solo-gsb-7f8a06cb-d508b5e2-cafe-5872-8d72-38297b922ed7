@@ -1,0 +1,13 @@
+services:
+  web:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      DATA_DIR: /data
+    volumes:
+      - site-data:/data
+    restart: unless-stopped
+
+volumes:
+  site-data:
